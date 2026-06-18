@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stepanus Fajar Pamungkas | Technical Project Manager</title>
 <meta name="description" content="Technical Project Manager with 15+ years of experience in Quality Assurance, Release Management, Gaming, SaaS, and Software Delivery.">
+<meta name="keywords" content="Technical Project Manager, Project Manager, Release Manager, Quality Assurance Lead, Software Delivery, Gaming Industry, SaaS, AccelByte, Project Leadership, Indonesia">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,6 +105,10 @@ header {
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--glass-border);
   transition: background 0.4s;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  header { backdrop-filter: none; -webkit-backdrop-filter: none; }
 }
 
 nav {
@@ -264,6 +269,7 @@ nav {
   background-size: 60px 60px;
   opacity: 0.3;
   z-index: 0;
+  pointer-events: none;
 }
 
 .hero-gradient {
@@ -366,6 +372,24 @@ nav {
   animation: fadeInUp 0.8s ease 0.8s both;
 }
 
+.career-evolution{
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    font-weight:600;
+    color:var(--text-secondary);
+    animation: fadeInUp 0.8s ease 0.9s both;
+}
+
+.career-evolution span{
+    background:rgba(59,130,246,.1);
+    padding:8px 16px;
+    border-radius:30px;
+}
+
 .btn {
   text-decoration: none;
   padding: 14px 28px;
@@ -379,6 +403,7 @@ nav {
   cursor: pointer;
   border: none;
   font-family: inherit;
+  touch-action: manipulation;
 }
 
 .btn-primary {
@@ -650,66 +675,106 @@ section { padding: 100px 0; position: relative; }
 }
 
 /* SKILLS */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+.skills-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
 }
 
-.skill-card {
-  background: var(--surface);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--surface-border);
-  border-radius: 16px;
-  padding: 24px;
-  transition: all 0.3s;
+.skill-tag{
+    background:rgba(59,130,246,.1);
+    color:var(--primary);
+    padding:10px 18px;
+    border-radius:30px;
+    font-weight:600;
+    font-size:0.9rem;
+    transition:all .3s;
 }
 
-.skill-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(99, 102, 241, 0.3);
-  box-shadow: var(--card-shadow);
+.skill-tag:hover{
+    background:rgba(59,130,246,.2);
+    transform:translateY(-2px);
 }
 
-.skill-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:24px;
 }
 
-.skill-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: var(--gradient-2);
-  border: 1px solid var(--surface-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary);
-  font-size: 1rem;
+.why-card{
+    background:var(--surface);
+    backdrop-filter:blur(12px);
+    border:1px solid var(--surface-border);
+    border-radius:20px;
+    padding:32px;
+    text-align:center;
+    transition:all .4s;
 }
 
-.skill-name {
-  font-weight: 600;
-  font-size: 0.95rem;
+.why-card:hover{
+    border-color:rgba(99,102,241,.3);
+    transform:translateY(-6px);
+    box-shadow:var(--card-shadow);
 }
 
-.skill-bar {
-  width: 100%;
-  height: 6px;
-  background: var(--bg-secondary);
-  border-radius: 4px;
-  overflow: hidden;
+.why-icon{
+    font-size:2rem;
+    color:var(--primary);
+    margin-bottom:16px;
 }
 
-.skill-bar-fill {
-  height: 100%;
-  background: var(--gradient-1);
-  border-radius: 4px;
-  width: 0;
-  transition: width 1.2s ease;
+.why-card h3{
+    margin-bottom:8px;
+    font-size:1.15rem;
+}
+
+.why-card p{
+    color:var(--text-secondary);
+    font-size:0.92rem;
+    line-height:1.6;
+}
+
+.featured-card{
+    background:var(--surface);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(59,130,246,.2);
+    border-radius:20px;
+    padding:40px;
+    transition:all .4s;
+}
+
+.featured-card:hover{
+    border-color:rgba(99,102,241,.3);
+    box-shadow:var(--card-shadow);
+}
+
+.featured-card h3{
+    color:var(--primary);
+    font-size:1.3rem;
+    margin-bottom:4px;
+}
+
+.featured-card h4{
+    color:var(--text-secondary);
+    font-weight:500;
+    font-size:1rem;
+}
+
+.featured-card ul{
+    margin-top:20px;
+    padding-left:20px;
+}
+
+.featured-card li{
+    color:var(--text-secondary);
+    margin-bottom:10px;
+    line-height:1.6;
+}
+
+.featured-card li::marker{
+    color:var(--primary);
 }
 
 /* PROJECTS */
@@ -801,31 +866,30 @@ section { padding: 100px 0; position: relative; }
 }
 
 /* QUOTE */
-.quote-section {
-  text-align: center;
+.philosophy-content{
+    text-align:center;
+    max-width:720px;
+    margin:0 auto;
 }
 
-.quote-icon {
-  font-size: 2.5rem;
-  color: var(--primary);
-  opacity: 0.3;
-  margin-bottom: 16px;
+.philosophy-block{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(1.2rem,2.5vw,1.6rem);
+    font-weight:500;
+    line-height:1.7;
+    color:var(--text-primary);
+    border-left:4px solid var(--primary);
+    padding:24px 32px;
+    margin-bottom:24px;
+    text-align:left;
+    background:var(--gradient-2);
+    border-radius:0 16px 16px 0;
 }
 
-.quote-text {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-  font-weight: 500;
-  max-width: 720px;
-  margin: 0 auto;
-  line-height: 1.7;
-  color: var(--text-primary);
-}
-
-.quote-attribution {
-  margin-top: 16px;
-  color: var(--text-muted);
-  font-size: 0.85rem;
+.philosophy-text{
+    color:var(--text-secondary);
+    font-size:1.05rem;
+    line-height:1.8;
 }
 
 /* CONTACT */
@@ -932,6 +996,7 @@ footer .social-links a:hover {
   transition: all 0.3s;
   z-index: 100;
   backdrop-filter: blur(8px);
+  touch-action: manipulation;
 }
 
 .back-to-top.show {
@@ -987,7 +1052,6 @@ footer .social-links a:hover {
   .timeline::before { left: 9px; }
 
   .projects-grid { grid-template-columns: 1fr; }
-  .skills-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
 
   section { padding: 60px 0; }
@@ -1051,6 +1115,16 @@ Project Manager, Release Management Professional, and former QA Lead with extens
 <div class="hero-buttons">
 <a href="#journey" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Explore My Journey</a>
 <a href="#" class="btn btn-secondary"><i class="fas fa-download"></i> Download CV</a>
+</div>
+
+<div class="career-evolution">
+<span>QA Analyst</span>
+<i class="fas fa-arrow-right"></i>
+<span>QA Lead</span>
+<i class="fas fa-arrow-right"></i>
+<span>Project Manager</span>
+<i class="fas fa-arrow-right"></i>
+<span>Technical Project Manager</span>
 </div>
 </div>
 <div class="scroll-indicator">
@@ -1196,77 +1270,62 @@ Team Leadership
 <h2 class="section-title">Professional Expertise</h2>
 <p class="section-subtitle">Core competencies developed over 15+ years in the industry</p>
 </div>
-<div class="skills-grid">
-<div class="skill-card reveal">
-<div class="skill-header">
-<div class="skill-icon"><i class="fas fa-diagram-project"></i></div>
-<div class="skill-name">Technical Project Management</div>
+<div class="skills-tags">
+<div class="skill-tag">Technical Project Management</div>
+<div class="skill-tag">Software Delivery</div>
+<div class="skill-tag">Release Management</div>
+<div class="skill-tag">Quality Assurance</div>
+<div class="skill-tag">Stakeholder Management</div>
+<div class="skill-tag">Risk Management</div>
+<div class="skill-tag">Agile Delivery</div>
+<div class="skill-tag">Cross-functional Leadership</div>
 </div>
-<div class="skill-bar"><div class="skill-bar-fill" data-width="90"></div></div>
 </div>
-<div class="skill-card reveal">
-<div class="skill-header">
-<div class="skill-icon"><i class="fas fa-tasks"></i></div>
-<div class="skill-name">Project Management</div>
+</section>
+
+<section id="why-me">
+<div class="container">
+<div class="section-header reveal">
+<div class="section-label"><i class="fas fa-star"></i> Why Me</div>
+<h2 class="section-title">Why Work With Me</h2>
 </div>
-<div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
+<div class="why-grid">
+<div class="why-card reveal">
+<div class="why-icon"><i class="fas fa-check-circle"></i></div>
+<h3>Quality First</h3>
+<p>Strong Quality Assurance foundation developed across gaming and software industries.</p>
 </div>
-<div class="skill-card reveal">
-<div class="skill-header">
-<div class="skill-icon"><i class="fas fa-rocket"></i></div>
-<div class="skill-name">Release Management</div>
+<div class="why-card reveal">
+<div class="why-icon"><i class="fas fa-truck-fast"></i></div>
+<h3>Delivery Focused</h3>
+<p>Experienced in planning, execution, risk management, and delivery coordination.</p>
 </div>
-<div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
+<div class="why-card reveal">
+<div class="why-icon"><i class="fas fa-users"></i></div>
+<h3>Cross-functional Leadership</h3>
+<p>Bridging engineering, QA, stakeholders, and business objectives.</p>
 </div>
-<div class="skill-card reveal">
-<div class="skill-header">
-<div class="skill-icon"><i class="fas fa-check-circle"></i></div>
-<div class="skill-name">Quality Assurance</div>
 </div>
-<div class="skill-bar"><div class="skill-bar-fill" data-width="95"></div></div>
 </div>
-<div class="skill-card reveal">
-<div class="skill-header">
-<div class="skill-icon"><i class="fas fa-gamepad"></i></div>
-<div class="skill-name">Game Testing</div>
+</section>
+
+<section id="featured-experience">
+<div class="container">
+<div class="section-header reveal">
+<div class="section-label"><i class="fas fa-briefcase"></i> Experience</div>
+<h2 class="section-title">Featured Experience</h2>
+<p class="section-subtitle">Recent leadership experience and software delivery impact.</p>
 </div>
-<div class="skill-bar"><div class="skill-bar-fill" data-width="90"></div></div>
-</div>
-<div class="skill-card reveal">
-<div class="skill-header">
-<div class="skill-icon"><i class="fas fa-globe"></i></div>
-<div class="skill-name">Web Testing</div>
-</div>
-<div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
-</div>
-<div class="skill-card reveal">
-<div class="skill-header">
-<div class="skill-icon"><i class="fas fa-handshake"></i></div>
-<div class="skill-name">Stakeholder Management</div>
-</div>
-<div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div>
-</div>
-<div class="skill-card reveal">
-<div class="skill-header">
-<div class="skill-icon"><i class="fas fa-shield"></i></div>
-<div class="skill-name">Risk Management</div>
-</div>
-<div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div>
-</div>
-<div class="skill-card reveal">
-<div class="skill-header">
-<div class="skill-icon"><i class="fas fa-sync"></i></div>
-<div class="skill-name">Agile Delivery</div>
-</div>
-<div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
-</div>
-<div class="skill-card reveal">
-<div class="skill-header">
-<div class="skill-icon"><i class="fas fa-users"></i></div>
-<div class="skill-name">Leadership</div>
-</div>
-<div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div>
-</div>
+<div class="featured-card reveal">
+<h3>AccelByte</h3>
+<h4>Technical Project Manager</h4>
+<ul>
+<li>Led project planning and execution across cross-functional teams.</li>
+<li>Facilitated stakeholder communication and alignment.</li>
+<li>Supported software delivery initiatives and release coordination.</li>
+<li>Contributed to the successful public launch of ADT.</li>
+<li>Managed project risks, dependencies, and delivery timelines.</li>
+</ul>
 </div>
 </div>
 </section>
@@ -1281,7 +1340,7 @@ Team Leadership
 <div class="projects-grid">
 <div class="project-card reveal">
 <div class="project-title">AccelByte Development Toolkit (ADT)</div>
-<div class="project-description">Contributed to project coordination, delivery support, stakeholder alignment, and quality initiatives for this enterprise SaaS platform.</div>
+<div class="project-description">Contributed to project coordination, stakeholder alignment, delivery planning, quality initiatives, and launch activities for the AccelByte Development Toolkit platform.</div>
 <div class="project-tags">
 <span class="project-tag">SaaS</span>
 <span class="project-tag">Project Coordination</span>
@@ -1321,12 +1380,19 @@ Team Leadership
 </div>
 </section>
 
-<section id="quote">
+<section id="philosophy">
 <div class="container">
-<div class="quote-section reveal">
-<div class="quote-icon"><i class="fas fa-quote-right"></i></div>
-<div class="quote-text">"Quality is not a phase. Quality is built into every decision, every milestone, and every release."</div>
-<div class="quote-attribution">— Stepanus Fajar Pamungkas</div>
+<div class="section-header reveal">
+<div class="section-label"><i class="fas fa-quote-left"></i> Philosophy</div>
+<h2 class="section-title">Leadership Philosophy</h2>
+</div>
+<div class="philosophy-content reveal">
+<blockquote class="philosophy-block">
+"Quality is not a phase. Quality is built into every decision, every milestone, and every release."
+</blockquote>
+<p class="philosophy-text">
+My background in Quality Assurance enables me to identify risks early, while my project management experience helps teams execute effectively and deliver successfully.
+</p>
 </div>
 </div>
 </section>
@@ -1416,9 +1482,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const typingText = document.getElementById('typingText');
   const words = [
     'Technical Project Manager',
-    'Quality Assurance Leader',
+    'Former QA Lead',
     'Release Management Professional',
-    'Project Delivery Expert'
+    'Software Delivery Leader'
   ];
   let wordIndex = 0, charIndex = 0, isDeleting = false, typePaused = false;
 
@@ -1550,19 +1616,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.5 });
   counters.forEach(c => counterObserver.observe(c));
-
-  const skillBars = document.querySelectorAll('.skill-bar-fill');
-  const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const width = el.getAttribute('data-width');
-        el.style.width = width + '%';
-        skillObserver.unobserve(el);
-      }
-    });
-  }, { threshold: 0.3 });
-  skillBars.forEach(bar => skillObserver.observe(bar));
 
   const timelineItems = document.querySelectorAll('.timeline-item');
   const timelineObserver = new IntersectionObserver((entries) => {
