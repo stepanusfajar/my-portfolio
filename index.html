@@ -1238,7 +1238,7 @@ Project Manager, Release Management Professional, and former QA Lead with extens
 </p>
 <div class="hero-buttons">
 <a href="#journey" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Explore My Journey</a>
-<a href="Stepanus%20Fajar_CV.pdf" download class="btn btn-secondary"><i class="fas fa-download"></i> Download CV</a>
+<a href="Stepanus%20Fajar_CV.pdf" download class="btn btn-secondary" id="downloadCV"><i class="fas fa-download"></i> Download CV</a>
 </div>
 
 <div class="career-evolution">
@@ -1823,6 +1823,27 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  const downloadBtn = document.getElementById('downloadCV');
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', async function(e) {
+      e.preventDefault();
+      try {
+        const response = await fetch(this.href);
+        const blob = await response.blob();
+        const blobUrl = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = blobUrl;
+        a.download = 'Stepanus_Fajar_CV.pdf';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(blobUrl);
+      } catch {
+        window.open(this.href, '_blank');
+      }
+    });
+  }
 
 });
 </script>
