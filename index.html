@@ -334,6 +334,31 @@ nav {
   animation: fadeInUp 0.8s ease 0.2s both;
 }
 
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--surface-border);
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.3), 0 0 60px rgba(99, 102, 241, 0.1);
+  margin-bottom: 24px;
+  animation: fadeInDown 0.8s ease;
+  transition: all 0.3s;
+}
+
+.profile-photo:hover {
+  border-color: var(--primary);
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.5), 0 0 80px rgba(99, 102, 241, 0.2);
+  transform: scale(1.02);
+}
+
+@media (max-width: 480px) {
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
+}
+
 .hero h1 .highlight {
   background: var(--gradient-1);
   -webkit-background-clip: text;
@@ -1200,6 +1225,7 @@ footer .footer-copy {
 <div class="hero-grid"></div>
 <div class="hero-gradient"></div>
 <div class="container hero-content">
+<img src="Stepanus.jpg" alt="Stepanus Fajar Pamungkas" class="profile-photo" loading="lazy">
 <div class="badge"><i class="fas fa-rocket"></i> 15+ Years in Software &amp; Gaming Industry</div>
 <h1>Hi, I'm <span class="highlight">Stepanus Fajar Pamungkas</span></h1>
 <div class="typing-wrapper">
